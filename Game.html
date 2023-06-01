@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Games</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .go-back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <button class="go-back-button" onclick="goBack()">Go Back</button>
+    <iframe src="https://wanacry.onrender.com"></iframe>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
