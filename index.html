@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WNCRY</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        h1 {
+            font-family: "Arial", sans-serif;
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .main-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.5;
+            z-index: 1;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(to bottom, #b3dfff, #003399);
+            animation: scrollBackground 20s linear infinite;
+        }
+
+        @keyframes scrollBackground {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 0% 100%;
+            }
+        }
+
+        .play-now-button,
+        .contact-me-button,
+        .about-creator-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .play-now-button {
+            background-color: #000;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .play-now-button:hover {
+            background-color: #333;
+        }
+
+        .contact-me-button {
+            background-color: #f00;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .contact-me-button:hover {
+            background-color: #d00;
+        }
+
+        .about-creator-button {
+            background-color: #00f;
+            color: #fff;
+        }
+
+        .about-creator-button:hover {
+            background-color: #007bff;
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            display: none;
+        }
+
+        .popup {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .popup h3 {
+            margin-top: 0;
+        }
+
+        .popup p {
+            margin-bottom: 0;
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ChonkThePenguins Unblocked Games</h1>
+    </header>
+
+    <div class="main-content">
+        <h2>Welcome to ChonkThePenguins Unblocked Games</h2>
+        <p>Enjoy a collection of fun and exciting unblocked games!</p>
+        <p>Click the button below to get started.</p>
+        <button class="play-now-button" onclick="location.href = 'game.html';">Play Now</button>
+        <button class="contact-me-button" onclick="togglePopup('contact-me-popup')">Contact Me</button>
+        <button class="about-creator-button" onclick="togglePopup('about-creator-popup')">About the Creator</button>
+    </div>
+
+    <div class="background"></div>
+
+    <div class="popup-overlay" id="contact-me-popup">
+        <div class="popup">
+            <h3>Contact Me</h3>
+            <p>Contact me by phone at this number: 612-590-1043</p>
+            <span class="popup-close" onclick="togglePopup('contact-me-popup')">X</span>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="about-creator-popup">
+        <div class="popup">
+            <h3>About the Creator</h3>
+            <p>Hello, you most likely know me from my game websites. I'm currently testing with new platforms. Please contact me if you have any suggestions.</p>
+            <span class="popup-close" onclick="togglePopup('about-creator-popup')">X</span>
+        </div>
+    </div>
+
+    <script>
+        function togglePopup(popupId) {
+            var popup = document.getElementById(popupId);
+            popup.style.display = (popup.style.display === 'none') ? 'flex' : 'none';
+        }
+    </script>
+</body>
+</html>
